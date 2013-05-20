@@ -286,7 +286,7 @@ class BaseController extends ContainerAware
      */
     protected function getUser()
     {
-        return $this->getSecurityContext()->getToken()->getUser();
+        return $this->getSecurityContext()->getToken()->getUser()->getProfile();
     }
 
     /**

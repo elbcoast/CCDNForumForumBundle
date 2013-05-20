@@ -44,7 +44,7 @@ class DraftManager extends BaseManager implements BaseManagerInterface
      */
     public function getDraft($draftId)
     {
-        $user = $this->securityContext->getToken()->getUser();
+        $user = $this->securityContext->getToken()->getUser()->getProfile();
 
         $draft = $this->repository->findOneByIdForUserById($draftId, $user->getId());
 
@@ -101,7 +101,7 @@ class DraftManager extends BaseManager implements BaseManagerInterface
      */
     public function create(Post $post)
     {
-        $user = $this->securityContext->getToken()->getUser();
+        $user = $this->securityContext->getToken()->getUser()->getProfile();
 
         $draft = new Draft();
 

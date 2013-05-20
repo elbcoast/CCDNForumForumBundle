@@ -111,7 +111,7 @@ abstract class BaseManager implements BaseManagerInterface
      */
     public function getUser()
     {
-        return $this->securityContext->getToken()->getUser();
+        return $this->securityContext->getToken()->getUser()->getProfile();
     }
 
     /**

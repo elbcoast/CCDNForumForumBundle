@@ -88,7 +88,7 @@ class PolicyManager
      */
     public function getUser()
     {
-        return $this->securityContext->getToken()->getUser();
+        return $this->securityContext->getToken()->getUser()->getProfile();
     }
 
     /**
